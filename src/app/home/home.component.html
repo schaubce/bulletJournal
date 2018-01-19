@@ -1,0 +1,48 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Add a thought...</p>
+  </div>
+  <div class="col">
+    <p>Your bullet journal for 12/22</p>
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col">
+    <p>({{ itemCount }})</p>
+    <p class="sm">Use this form below to add a new bullet journal item. What do you want to take note of?</p>
+
+    <form>
+      <select placeholder="Thought Type" [(ngModel)]="itemType" name="itemType">
+        <option value="Task">Task</option>
+        <option value="Event">Event</option>
+        <option value="Note">Note</option>
+        <option value="Inspiration">Inspiration</option>
+        <option value="Explore">Explore</option>
+      </select>
+      <input type="text" class="txt" placeholder="Thought..." [(ngModel)]="itemText" name="itemText">
+      <input type="submit" class="btn" (click)="addItem()">
+    </form>
+  </div>
+  <div class="col">
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+    <ul class="fa-ul">
+      <app-list-item *ngFor="let item of items" [item]="item" ></app-list-item>
+    </ul>
+  </div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template>
+</div>
+
+

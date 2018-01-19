@@ -1,0 +1,8 @@
+<a href="#" (click)="open(content)">
+<li *ngIf="Task"><i class="fas fa-circle"></i> {{ itemText }}</li>
+<li *ngIf="Event"><i class="far fa-circle"></i> {{ itemText }}</li>
+<li *ngIf="Task_Complete"><i class="fas fa-check-circle"></i> {{ itemText }}</li>
+<li *ngIf="Note"><i class="fas fa-minus"></i> {{ itemText }}</li>
+<li *ngIf="Inspiration"><i class="fas fa-exclamation"></i> {{ itemText }}</li>
+<li *ngIf="Explore"><i class="fas fa-eye"></i> {{ itemText }}</li>
+</a>
